@@ -30,7 +30,7 @@ void chucNang1(){
     printf("\n");
 }
 
-int doiXung(char c[]){
+int doiXung(char c[]){ // 1 doi xung, 0 khong doi xung
     int l = 0, r = strlen(c) - 1;
     while (l <= r){
         if (c[l] != c[r]){
@@ -67,7 +67,7 @@ void chucNang2(){
     printf("So luong cac ky tu la so trong chuoi la: %d\n", count);
 }
 
-int checkNumber(char c[]){
+int checkNumber(char c[]){ // 1 la so, 0 khong phai so
     int i;
     for (i = 0; i < strlen(c); i++) {
         if (!isdigit(c[i])) {
@@ -81,16 +81,14 @@ void chucNang3() {
     printf("\n");
     FILE *f1, *f2;
     int max = -1e9, check = 0;
-    char filename[100] = "";
-    char filename2[100] = "";
-
+    char input[100] = ""; 
+    char output[100] = "";
     printf("Nhap ten file: ");
-    scanf("%s", filename);
-    strcat(filename, ".txt");
-
+    scanf("%s", input);
+    strcat(input, ".txt");
     int x;
     char c[100];
-    f1 = fopen(filename, "r");
+    f1 = fopen(input, "r");
 
     if (f1 != NULL) {
         while (fscanf(f1, "%s", c) != EOF) {
@@ -114,17 +112,15 @@ void chucNang3() {
         printf("File khong hoan toan la so\n");
     } else {
         printf("Nhap ten file de ghi so lon nhat: ");
-        scanf("%s", filename2);
-        strcat(filename2, ".txt");
-        f2 = fopen(filename2, "w");
+        scanf("%s", output);
+        strcat(output, ".txt");
+        f2 = fopen(output, "w");
         fprintf(f2, "%d", max);
-        printf("Da ghi so lon nhat vao file %s\n", filename2);
+        printf("Da ghi so lon nhat vao file %s\n", output);
         fclose(f2);
     }
     printf("\n");
 }
-
-
 
 int main(){
     int choice;
