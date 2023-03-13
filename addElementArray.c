@@ -10,7 +10,7 @@ int main(){
     }
     int num, k;
     scanf("%d %d", &num, &k);
-    for (int i = n + 1; i >= k + 1; i--) {
+    for (int i = n; i >= k + 1; i--) {
         a[i] = a[i - 1];
     }
     a[k] = num;
