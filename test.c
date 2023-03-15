@@ -1,13 +1,5 @@
 #include<stdio.h>
 
-
-int a;
-a = 10;
-int b = 20;
-
-
-
-
 int main(){
 	int income, income_tax;
 	scanf("%d",&income);
